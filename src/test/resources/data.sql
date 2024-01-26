@@ -1,0 +1,10 @@
+INSERT INTO ORDER_LIST(
+    NO,
+    TITLE,
+    STATUS
+)
+VALUES
+    ('A123', 'ORDER 1', 'SUCCESS'),
+    ('B123', 'ORDER 2', 'SUCCESS'),
+    ('C123', 'ORDER 3', 'FAIL');
+
