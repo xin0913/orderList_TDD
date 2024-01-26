@@ -18,7 +18,7 @@ class QueryOrderByNoRepositoryTest {
 
     @Test
     @Sql(scripts = "classpath:data.sql")
-    void test_query_order_by_no_should_be_successful() {
+    void test_query_order_by_no_should_be_successful_first() {
         String orderNo = "A123";
         String orderTitle = "ORDER 1";
         String orderStatus = "SUCCESS";
@@ -29,8 +29,41 @@ class QueryOrderByNoRepositoryTest {
         expected.setStatus(orderStatus);
 
         QueryOrderByNoEntity actual = queryOrderByNoRepository.findByNo(orderNo);
+        System.out.println("================actual=================" + actual);
+        assertThat(actual).isEqualTo(expected);
+    }
 
-//        System.out.println("=================actual====================" + actual);
+    @Test
+    @Sql(scripts = "classpath:data.sql")
+    void test_query_order_by_no_should_be_successful_second() {
+        String orderNo = "B123";
+        String orderTitle = "ORDER 2";
+        String orderStatus = "SUCCESS";
+
+        QueryOrderByNoEntity expected = new QueryOrderByNoEntity();
+        expected.setNo(orderNo);
+        expected.setTitle(orderTitle);
+        expected.setStatus(orderStatus);
+
+        QueryOrderByNoEntity actual = queryOrderByNoRepository.findByNo(orderNo);
+        System.out.println("================actual=================" + actual);
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    @Sql(scripts = "classpath:data.sql")
+    void test_query_order_by_no_should_be_successful_third() {
+        String orderNo = "C123";
+        String orderTitle = "ORDER 3";
+        String orderStatus = "FAIL";
+
+        QueryOrderByNoEntity expected = new QueryOrderByNoEntity();
+        expected.setNo(orderNo);
+        expected.setTitle(orderTitle);
+        expected.setStatus(orderStatus);
+
+        QueryOrderByNoEntity actual = queryOrderByNoRepository.findByNo(orderNo);
+        System.out.println("================actual=================" + actual);
         assertThat(actual).isEqualTo(expected);
     }
 }
