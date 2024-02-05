@@ -1,4 +1,4 @@
-package com.example.orderListTDD;
+package com.example.orderListTDD.QueryOrderByNo;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

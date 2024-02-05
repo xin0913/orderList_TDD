@@ -1,4 +1,4 @@
-package com.example.orderListTDD;
+package com.example.orderListTDD.QueryOrderByNo;
 
 import jakarta.persistence.*;
 import lombok.Data;

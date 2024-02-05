@@ -1,4 +1,4 @@
-package com.example.orderListTDD;
+package com.example.orderListTDD.QueryOrderByNo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +12,8 @@ import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTest
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = NONE)
 class QueryOrderByNoRepositoryTest {
-
     @Autowired
     private QueryOrderByNoRepository queryOrderByNoRepository;
-
     @Test
     @Sql(scripts = "classpath:data.sql")
     void test_query_order_by_no_should_be_successful_first() {
@@ -32,7 +30,6 @@ class QueryOrderByNoRepositoryTest {
         System.out.println("================actual=================" + actual);
         assertThat(actual).isEqualTo(expected);
     }
-
     @Test
     @Sql(scripts = "classpath:data.sql")
     void test_query_order_by_no_should_be_successful_second() {
@@ -49,7 +46,6 @@ class QueryOrderByNoRepositoryTest {
         System.out.println("================actual=================" + actual);
         assertThat(actual).isEqualTo(expected);
     }
-
     @Test
     @Sql(scripts = "classpath:data.sql")
     void test_query_order_by_no_should_be_successful_third() {
